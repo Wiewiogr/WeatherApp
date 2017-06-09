@@ -20,7 +20,6 @@ public class MongoWeatherContextTest {
 
 
         int minutes = (now.getMinute()/30) * 30;
-
         Assert.assertEquals(now.getHour(), weather.hour);
         Assert.assertEquals(minutes, weather.minute);
     }
