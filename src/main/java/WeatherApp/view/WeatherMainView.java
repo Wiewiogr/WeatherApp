@@ -4,9 +4,14 @@ import WeatherApp.controller.WeatherController;
 import WeatherApp.model.Weather;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.lang.reflect.Array;
 import java.nio.file.Watchable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,17 +33,29 @@ public class WeatherMainView {
     private JComboBox yearHourly;
     private JComboBox hourHourly;
     private JComboBox minuteHourly;
-    private JLabel iconeLabel;
-    private JLabel temperatureField;
-    private JLabel humidityLabel;
-    private JLabel visibilityLabel;
-    private JLabel preasureLabel;
-    private JLabel windSpeedLabel;
-    private JLabel cloudLabel;
+    private JLabel icon;
     private JComboBox dayDaily;
     private JComboBox monthDaily;
     private JComboBox yearDaily;
     private JLabel currentClouds;
+    private JTable weatherTable;
+    private JLabel weatherIcon;
+    private JLabel hourlyTemp;
+    private JLabel hourlyHumidity;
+    private JLabel hourlyVisibility;
+    private JLabel hourlyPressure;
+    private JLabel hourlyWindSpeed;
+    private JLabel hourlyCloud;
+    private JLabel preasureLabel;
+    private JLabel windSpeedLabel;
+    private JLabel cloudLabel;
+    private JLabel visibilityLabel;
+    private JLabel humidityLabel;
+    private JLabel temperatureField;
+    private JButton checkWeatherButton;
+    private JLabel iconLabel;
+    private JButton checkDailyWeatherButton;
+    DefaultTableModel model;
 
     public WeatherMainView() {
         WeatherController controller = WeatherController.getInstance();
@@ -56,17 +73,95 @@ public class WeatherMainView {
         currentVisibility.setText(visibility +" m");
         currentWind.setText(wind + " m/s");
         currentClouds.setText(clouds + " %");
+
+        ImageIcon icon = new ImageIcon(getIconPath(weather));
+        weatherIcon.setIcon(icon);
+
+        model = new DefaultTableModel();
+        model.addColumn("Hour");
+        model.addColumn("Temperature");
+        model.addColumn("Humidity");
+        model.addColumn("Visibility");
+        model.addColumn("Pressure");
+        model.addColumn("Wind Speed");
+        model.addColumn("Clouds");
+
+        weatherTable.setModel(model);
+
+        checkWeatherButton.addActionListener(e -> setHourlyWeather());
+        checkDailyWeatherButton.addActionListener(e -> setDailyWeather());
     }
 
-//    private void createUIComponents() {
-//        //dailyWeather = new DailyWeatherView();
-//        //hourlyWeather = new HourlyWeatherView();
-//
-//        // TODO: place custom component creation code here
-//    }
+    private String getIconPath(Weather weather){
+        return new StringBuilder().append("src/main/java/WeatherApp/view/icon/")
+                .append(weather.icon)
+                .append(".png")
+                .toString();
+    }
+
+    public void setDailyWeather() {
+        int day = dayDaily.getSelectedIndex()+1;
+        int month = monthDaily.getSelectedIndex()+1;
+        int year = yearDaily.getSelectedIndex()+2017;
+
+        WeatherController controller = WeatherController.getInstance();
+        List<Weather> weatherList = controller.getWeatherFromDay(year,month,day);
+        if( weatherList.isEmpty() ) {
+            JOptionPane.showMessageDialog(null, "No data available for this day.", "Info", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+        DefaultTableModel tableModel = (DefaultTableModel) weatherTable.getModel();
+
+        Object[] row = new Object[7];
+        for( int i = 0; i < weatherList.size(); i++ )
+        {
+            String hour = weatherList.get(i).hour + ":" + weatherList.get(i).minute;
+            if( weatherList.get(i).minute == 0 )
+                hour += "0";
+            row[0] = hour;
+            row[1] = weatherList.get(i).temperature;
+            row[2] = weatherList.get(i).humidity;
+            row[3] = weatherList.get(i).visibilty;
+            row[4] = weatherList.get(i).pressure;
+            row[5] = weatherList.get(i).windSpeed;
+            row[6] = weatherList.get(i).clouds;
+            tableModel.addRow(row);
+        }
+    }
+
+    public void setHourlyWeather() {
+        int day = dayHourly.getSelectedIndex()+1;
+        int month = monthHourly.getSelectedIndex()+1;
+        int year = yearHourly.getSelectedIndex()+2017;
+        int hour = hourHourly.getSelectedIndex();
+        int minute = minuteHourly.getSelectedIndex()*30;
+
+        WeatherController controller = WeatherController.getInstance();
+        Weather weather = controller.getWeatherFromMinute(year,month,day,hour,minute);
+
+        if( weather == null ) {
+            JOptionPane.showMessageDialog(null, "No data available for this hour.", "Info", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+
+        int currentTemperature = weather.temperature;
+        int humidity = weather.humidity;
+        int visibility = weather.visibilty;
+        int pressure = weather.pressure;
+        double wind = weather.windSpeed;
+        int clouds = weather.clouds;
+        hourlyTemp.setText(currentTemperature+ " °C");
+        hourlyHumidity.setText(humidity + " %");
+        hourlyVisibility.setText(visibility + " m");
+        hourlyPressure.setText(pressure + " hPa");
+        hourlyWindSpeed.setText(wind + " m/s");
+        hourlyCloud.setText(clouds + " %");
+
+        ImageIcon icon = new ImageIcon(getIconPath(weather));
+        iconLabel.setIcon(icon);
+    }
 
     public static void main(String[] args) {
-//        new WeatherMainView().createUIComponents();
         JFrame frame = new JFrame("WeatherMainView");
         WeatherMainView view = new WeatherMainView();
         frame.setContentPane(view.panel1);

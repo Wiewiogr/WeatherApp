@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="WeatherApp.view.WeatherMainView">
   <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="FormLayout">
-    <rowspec value="center:35px:noGrow"/>
-    <rowspec value="center:59px:noGrow"/>
-    <rowspec value="center:51px:noGrow"/>
+    <rowspec value="center:max(d;4px):noGrow"/>
+    <rowspec value="top:4dlu:noGrow"/>
+    <rowspec value="center:17px:noGrow"/>
+    <rowspec value="center:78px:noGrow"/>
+    <rowspec value="center:38px:noGrow"/>
     <rowspec value="top:13dlu:noGrow"/>
     <rowspec value="top:58dlu:noGrow"/>
     <rowspec value="center:max(d;4px):noGrow"/>
@@ -15,10 +17,11 @@
     <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:31px:noGrow"/>
     <rowspec value="center:max(d;4px):noGrow"/>
-    <rowspec value="center:29px:noGrow"/>
-    <rowspec value="top:21dlu:noGrow"/>
+    <rowspec value="center:17px:noGrow"/>
     <rowspec value="center:max(d;4px):noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
+    <rowspec value="top:4dlu:noGrow"/>
+    <rowspec value="center:max(d;4px):noGrow"/>
     <colspec value="fill:25px:noGrow"/>
     <colspec value="left:4dlu:noGrow"/>
     <colspec value="fill:85px:noGrow"/>
@@ -28,16 +31,18 @@
     <colspec value="left:48dlu:noGrow"/>
     <colspec value="fill:max(d;4px):noGrow"/>
     <colspec value="left:16dlu:noGrow"/>
-    <colspec value="fill:394px:noGrow"/>
+    <colspec value="fill:511px:noGrow"/>
+    <colspec value="left:4dlu:noGrow"/>
+    <colspec value="fill:max(d;4px):noGrow"/>
     <constraints>
-      <xy x="20" y="20" width="690" height="483"/>
+      <xy x="20" y="20" width="830" height="448"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
       <component id="24d9e" class="javax.swing.JLabel">
         <constraints>
-          <grid row="1" column="2" row-span="1" col-span="6" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="2" row-span="1" col-span="6" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
         <properties>
@@ -47,7 +52,7 @@
       </component>
       <tabbedpane id="80a82" binding="tabbedPane1" default-binding="true">
         <constraints>
-          <grid row="0" column="9" row-span="18" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+          <grid row="2" column="9" row-span="17" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="200" height="200"/>
           </grid>
           <forms/>
@@ -59,14 +64,18 @@
             <rowspec value="center:max(d;4px):noGrow"/>
             <rowspec value="top:4dlu:noGrow"/>
             <rowspec value="center:d:noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:max(d;4px):noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:d:grow"/>
             <colspec value="fill:max(d;4px):noGrow"/>
-            <colspec value="left:28dlu:noGrow"/>
+            <colspec value="left:52dlu:noGrow"/>
             <colspec value="fill:92px:noGrow"/>
             <colspec value="left:4dlu:noGrow"/>
-            <colspec value="fill:88px:noGrow"/>
-            <colspec value="left:4dlu:noGrow"/>
+            <colspec value="fill:123px:noGrow"/>
+            <colspec value="left:5dlu:noGrow"/>
             <colspec value="fill:92px:noGrow"/>
-            <colspec value="left:14dlu:noGrow"/>
+            <colspec value="left:49dlu:noGrow"/>
             <colspec value="fill:max(d;4px):noGrow"/>
             <constraints>
               <tabbedpane title="Daily Weather"/>
@@ -147,6 +156,29 @@
                   </model>
                 </properties>
               </component>
+              <scrollpane id="9805f">
+                <constraints>
+                  <grid row="6" column="1" row-span="1" col-span="8" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                  <forms defaultalign-horz="false" defaultalign-vert="false"/>
+                </constraints>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <component id="d220c" class="javax.swing.JTable" binding="weatherTable">
+                    <constraints/>
+                    <properties/>
+                  </component>
+                </children>
+              </scrollpane>
+              <component id="43ac3" class="javax.swing.JButton" binding="checkDailyWeatherButton">
+                <constraints>
+                  <grid row="4" column="2" row-span="1" col-span="5" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms/>
+                </constraints>
+                <properties>
+                  <text value="Check Weather"/>
+                </properties>
+              </component>
             </children>
           </grid>
           <grid id="3c464" binding="hourlyWeather" layout-manager="FormLayout">
@@ -154,7 +186,9 @@
             <rowspec value="top:4dlu:noGrow"/>
             <rowspec value="center:max(d;4px):noGrow"/>
             <rowspec value="top:4dlu:noGrow"/>
-            <rowspec value="center:39px:noGrow"/>
+            <rowspec value="center:max(d;4px):noGrow"/>
+            <rowspec value="top:4dlu:noGrow"/>
+            <rowspec value="center:max(d;4px):noGrow"/>
             <rowspec value="top:4dlu:noGrow"/>
             <rowspec value="center:31px:noGrow"/>
             <rowspec value="top:4dlu:noGrow"/>
@@ -170,7 +204,7 @@
             <rowspec value="top:4dlu:noGrow"/>
             <rowspec value="center:d:grow"/>
             <colspec value="fill:max(d;4px):noGrow"/>
-            <colspec value="left:4dlu:noGrow"/>
+            <colspec value="left:9dlu:noGrow"/>
             <colspec value="fill:d:grow"/>
             <colspec value="left:4dlu:noGrow"/>
             <colspec value="fill:d:grow"/>
@@ -308,26 +342,7 @@
                   </model>
                 </properties>
               </component>
-              <component id="1db15" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="6" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                  <forms/>
-                </constraints>
-                <properties>
-                  <text value="Label"/>
-                </properties>
-              </component>
-              <component id="98f3f" class="javax.swing.JLabel" binding="temperatureField">
-                <constraints>
-                  <grid row="6" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                  <forms/>
-                </constraints>
-                <properties>
-                  <font name="Constantia" size="14"/>
-                  <text value="Temperature"/>
-                </properties>
-              </component>
-              <component id="96c7c" class="javax.swing.JLabel">
+              <component id="1db15" class="javax.swing.JLabel" binding="hourlyTemp">
                 <constraints>
                   <grid row="8" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                   <forms/>
@@ -336,17 +351,17 @@
                   <text value="Label"/>
                 </properties>
               </component>
-              <component id="19593" class="javax.swing.JLabel" binding="humidityLabel">
+              <component id="98f3f" class="javax.swing.JLabel" binding="temperatureField">
                 <constraints>
                   <grid row="8" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                   <forms/>
                 </constraints>
                 <properties>
                   <font name="Constantia" size="14"/>
-                  <text value="Humidity"/>
+                  <text value="Temperature"/>
                 </properties>
               </component>
-              <component id="dc541" class="javax.swing.JLabel">
+              <component id="96c7c" class="javax.swing.JLabel" binding="hourlyHumidity">
                 <constraints>
                   <grid row="10" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                   <forms/>
@@ -355,17 +370,17 @@
                   <text value="Label"/>
                 </properties>
               </component>
-              <component id="2860" class="javax.swing.JLabel" binding="visibilityLabel">
+              <component id="19593" class="javax.swing.JLabel" binding="humidityLabel">
                 <constraints>
                   <grid row="10" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                   <forms/>
                 </constraints>
                 <properties>
                   <font name="Constantia" size="14"/>
-                  <text value="Visibility"/>
+                  <text value="Humidity"/>
                 </properties>
               </component>
-              <component id="ec8cc" class="javax.swing.JLabel">
+              <component id="dc541" class="javax.swing.JLabel" binding="hourlyVisibility">
                 <constraints>
                   <grid row="12" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                   <forms/>
@@ -374,17 +389,17 @@
                   <text value="Label"/>
                 </properties>
               </component>
-              <component id="b785b" class="javax.swing.JLabel" binding="preasureLabel">
+              <component id="2860" class="javax.swing.JLabel" binding="visibilityLabel">
                 <constraints>
                   <grid row="12" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                   <forms/>
                 </constraints>
                 <properties>
                   <font name="Constantia" size="14"/>
-                  <text value="Preasure"/>
+                  <text value="Visibility"/>
                 </properties>
               </component>
-              <component id="13da5" class="javax.swing.JLabel">
+              <component id="ec8cc" class="javax.swing.JLabel" binding="hourlyPressure">
                 <constraints>
                   <grid row="14" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                   <forms/>
@@ -393,17 +408,17 @@
                   <text value="Label"/>
                 </properties>
               </component>
-              <component id="2df15" class="javax.swing.JLabel" binding="windSpeedLabel">
+              <component id="b785b" class="javax.swing.JLabel" binding="preasureLabel">
                 <constraints>
                   <grid row="14" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                   <forms/>
                 </constraints>
                 <properties>
                   <font name="Constantia" size="14"/>
-                  <text value="Wind Speed"/>
+                  <text value="Preasure"/>
                 </properties>
               </component>
-              <component id="c0196" class="javax.swing.JLabel">
+              <component id="13da5" class="javax.swing.JLabel" binding="hourlyWindSpeed">
                 <constraints>
                   <grid row="16" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                   <forms/>
@@ -412,9 +427,28 @@
                   <text value="Label"/>
                 </properties>
               </component>
-              <component id="f868e" class="javax.swing.JLabel" binding="cloudLabel">
+              <component id="2df15" class="javax.swing.JLabel" binding="windSpeedLabel">
                 <constraints>
                   <grid row="16" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms/>
+                </constraints>
+                <properties>
+                  <font name="Constantia" size="14"/>
+                  <text value="Wind Speed"/>
+                </properties>
+              </component>
+              <component id="c0196" class="javax.swing.JLabel" binding="hourlyCloud">
+                <constraints>
+                  <grid row="18" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <forms/>
+                </constraints>
+                <properties>
+                  <text value="Label"/>
+                </properties>
+              </component>
+              <component id="f868e" class="javax.swing.JLabel" binding="cloudLabel">
+                <constraints>
+                  <grid row="18" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                   <forms/>
                 </constraints>
                 <properties>
@@ -422,13 +456,22 @@
                   <text value="Cloud"/>
                 </properties>
               </component>
-              <component id="abfb0" class="javax.swing.JLabel" binding="iconeLabel">
+              <component id="abfb0" class="javax.swing.JLabel" binding="iconLabel">
                 <constraints>
-                  <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                   <forms defaultalign-horz="false"/>
                 </constraints>
                 <properties>
-                  <text value="Label"/>
+                  <text value=""/>
+                </properties>
+              </component>
+              <component id="34c4d" class="javax.swing.JButton" binding="checkWeatherButton" default-binding="true">
+                <constraints>
+                  <grid row="6" column="4" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <forms/>
+                </constraints>
+                <properties>
+                  <text value="Check weather"/>
                 </properties>
               </component>
             </children>
@@ -437,7 +480,7 @@
       </tabbedpane>
       <component id="cc6d2" class="javax.swing.JLabel" binding="degrees">
         <constraints>
-          <grid row="4" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="6" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
           <forms top="10" left="0" bottom="0" right="0" defaultalign-horz="false" defaultalign-vert="false"/>
         </constraints>
         <properties>
@@ -447,7 +490,7 @@
       </component>
       <component id="4a6b" class="javax.swing.JLabel" binding="currentTemp">
         <constraints>
-          <grid row="3" column="2" row-span="2" col-span="3" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="5" column="2" row-span="2" col-span="3" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
           <forms defaultalign-horz="false"/>
         </constraints>
         <properties>
@@ -457,7 +500,7 @@
       </component>
       <component id="d71e4" class="javax.swing.JLabel">
         <constraints>
-          <grid row="9" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="11" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <forms defaultalign-vert="false"/>
         </constraints>
         <properties>
@@ -467,7 +510,7 @@
       </component>
       <component id="17434" class="javax.swing.JLabel" binding="currentHumidity">
         <constraints>
-          <grid row="9" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="11" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <forms defaultalign-horz="false" defaultalign-vert="false"/>
         </constraints>
         <properties>
@@ -477,7 +520,7 @@
       </component>
       <component id="182be" class="javax.swing.JLabel">
         <constraints>
-          <grid row="10" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="12" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <forms defaultalign-vert="false"/>
         </constraints>
         <properties>
@@ -487,7 +530,7 @@
       </component>
       <component id="45242" class="javax.swing.JLabel" binding="currentVisibility">
         <constraints>
-          <grid row="10" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="12" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <forms defaultalign-vert="false"/>
         </constraints>
         <properties>
@@ -497,7 +540,7 @@
       </component>
       <component id="2ca9e" class="javax.swing.JLabel">
         <constraints>
-          <grid row="8" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="10" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <forms defaultalign-vert="false"/>
         </constraints>
         <properties>
@@ -507,7 +550,7 @@
       </component>
       <component id="7ace0" class="javax.swing.JLabel" binding="currentClouds">
         <constraints>
-          <grid row="8" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="10" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <forms defaultalign-vert="false"/>
         </constraints>
         <properties>
@@ -517,7 +560,7 @@
       </component>
       <component id="4f6c4" class="javax.swing.JLabel">
         <constraints>
-          <grid row="12" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="14" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
         <properties>
@@ -527,7 +570,7 @@
       </component>
       <component id="818b4" class="javax.swing.JLabel" binding="currentWind">
         <constraints>
-          <grid row="12" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="14" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <forms defaultalign-vert="false"/>
         </constraints>
         <properties>
@@ -537,7 +580,7 @@
       </component>
       <component id="f0b1d" class="javax.swing.JLabel" binding="mainDesc">
         <constraints>
-          <grid row="2" column="3" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="4" column="3" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <forms defaultalign-vert="false"/>
         </constraints>
         <properties>
@@ -545,13 +588,13 @@
           <text value="main description"/>
         </properties>
       </component>
-      <component id="66dbd" class="javax.swing.JLabel">
+      <component id="66dbd" class="javax.swing.JLabel" binding="weatherIcon">
         <constraints>
-          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-          <forms defaultalign-horz="false"/>
+          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false" defaultalign-vert="false"/>
         </constraints>
         <properties>
-          <text value="Label"/>
+          <text value=""/>
         </properties>
       </component>
     </children>
