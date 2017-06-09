@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="FormLayout">
     <rowspec value="center:max(d;4px):noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
-    <rowspec value="center:17px:noGrow"/>
+    <rowspec value="center:11px:noGrow"/>
     <rowspec value="center:78px:noGrow"/>
     <rowspec value="center:38px:noGrow"/>
     <rowspec value="top:13dlu:noGrow"/>
@@ -22,7 +22,7 @@
     <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:max(d;4px):noGrow"/>
-    <colspec value="fill:25px:noGrow"/>
+    <colspec value="fill:34px:noGrow"/>
     <colspec value="left:4dlu:noGrow"/>
     <colspec value="fill:85px:noGrow"/>
     <colspec value="left:23dlu:noGrow"/>
@@ -30,7 +30,7 @@
     <colspec value="fill:max(d;4px):noGrow"/>
     <colspec value="left:48dlu:noGrow"/>
     <colspec value="fill:max(d;4px):noGrow"/>
-    <colspec value="left:16dlu:noGrow"/>
+    <colspec value="left:8dlu:noGrow"/>
     <colspec value="fill:511px:noGrow"/>
     <colspec value="left:4dlu:noGrow"/>
     <colspec value="fill:max(d;4px):noGrow"/>
@@ -415,7 +415,7 @@
                 </constraints>
                 <properties>
                   <font name="Constantia" size="14"/>
-                  <text value="Preasure"/>
+                  <text value="Pressure"/>
                 </properties>
               </component>
               <component id="13da5" class="javax.swing.JLabel" binding="hourlyWindSpeed">

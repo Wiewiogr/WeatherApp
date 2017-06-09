@@ -5,6 +5,7 @@ import WeatherApp.model.Weather;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.lang.reflect.Array;
@@ -99,7 +100,7 @@ public class WeatherMainView {
                 .toString();
     }
 
-    public void setDailyWeather() {
+    private void setDailyWeather() {
         int day = dayDaily.getSelectedIndex()+1;
         int month = monthDaily.getSelectedIndex()+1;
         int year = yearDaily.getSelectedIndex()+2017;
@@ -113,23 +114,23 @@ public class WeatherMainView {
         DefaultTableModel tableModel = (DefaultTableModel) weatherTable.getModel();
 
         Object[] row = new Object[7];
-        for( int i = 0; i < weatherList.size(); i++ )
+        for(Weather weather: weatherList)
         {
-            String hour = weatherList.get(i).hour + ":" + weatherList.get(i).minute;
-            if( weatherList.get(i).minute == 0 )
+            String hour = weather.hour + ":" + weather.minute;
+            if( weather.minute == 0 )
                 hour += "0";
             row[0] = hour;
-            row[1] = weatherList.get(i).temperature;
-            row[2] = weatherList.get(i).humidity;
-            row[3] = weatherList.get(i).visibilty;
-            row[4] = weatherList.get(i).pressure;
-            row[5] = weatherList.get(i).windSpeed;
-            row[6] = weatherList.get(i).clouds;
+            row[1] = weather.temperature;
+            row[2] = weather.humidity;
+            row[3] = weather.visibilty;
+            row[4] = weather.pressure;
+            row[5] = weather.windSpeed;
+            row[6] = weather.clouds;
             tableModel.addRow(row);
         }
     }
 
-    public void setHourlyWeather() {
+    private void setHourlyWeather() {
         int day = dayHourly.getSelectedIndex()+1;
         int month = monthHourly.getSelectedIndex()+1;
         int year = yearHourly.getSelectedIndex()+2017;
@@ -168,9 +169,5 @@ public class WeatherMainView {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
-    }
-
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
     }
 }
