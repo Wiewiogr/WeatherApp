@@ -57,7 +57,6 @@ public class MongoWeatherRepository {
                 list.add(weather);
             }
         }
-
         return list;
     }
 
@@ -73,18 +72,20 @@ public class MongoWeatherRepository {
         return document;
     }
 
-
     public Weather getCurrentWeather(){
-        Weather weather = new Weather();
+        Weather weather = null;
         LocalDateTime date = LocalDateTime.now();
-        int minute = date.getMinute();
-        if(minute >= 30) minute = 30;
-        else minute = 0;
-        Document queryDocument = createQueryForMinute(date.getYear(),
-                date.getMonthValue(), date.getDayOfMonth(), date.getHour(), minute);
-        return getSingleWeatherFromQuery(queryDocument);
+        while(weather == null) {
+            int minute = date.getMinute();
+            if (minute >= 30) minute = 30;
+            else minute = 0;
+            Document queryDocument = createQueryForMinute(date.getYear(),
+                    date.getMonthValue(), date.getDayOfMonth(), date.getHour(), minute);
+            weather = getSingleWeatherFromQuery(queryDocument);
+            date.minusMinutes(30);
+        }
+        return weather;
     }
-
 
     private Weather getSingleWeatherFromQuery(Document query){
         Weather weather = new Weather();
