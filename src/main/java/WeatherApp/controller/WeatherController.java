@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class WeatherController {
     private static WeatherController controller = new WeatherController();
-    static WeatherController getInstance(){
+    public static WeatherController getInstance(){
         return controller;
     }
 
@@ -25,7 +25,7 @@ public class WeatherController {
         return repository.getWeathersFromDay(year, month, day);
     }
 
-    Weather getCurrentWeather() {
+    public Weather getCurrentWeather() {
         return repository.getCurrentWeather();
     }
 
