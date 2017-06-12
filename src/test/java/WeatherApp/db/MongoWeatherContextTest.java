@@ -11,7 +11,7 @@ import java.util.List;
  * Created by wiewiogr on 08.06.17.
  */
 public class MongoWeatherContextTest {
-    MongoWeatherRepository context = new MongoWeatherRepository();
+    MongoWeatherDataContext context = new MongoWeatherDataContext();
 
     @Test
     public void get_current_weather(){

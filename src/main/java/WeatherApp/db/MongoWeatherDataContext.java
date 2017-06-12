@@ -13,12 +13,12 @@ import java.util.List;
 /**
  * Created by wiewiogr on 08.06.17.
  */
-public class MongoWeatherRepository {
+public class MongoWeatherDataContext implements WeatherDataContext{
     private MongoClient mongoClient;
     private MongoDatabase db;
     private String collectionName = "weatherTest";
 
-    public MongoWeatherRepository() {
+    public MongoWeatherDataContext() {
         try {
             mongoClient = new MongoClient("85.255.7.108", 27017);
             db = mongoClient.getDatabase("test");

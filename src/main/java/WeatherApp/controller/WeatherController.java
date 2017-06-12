@@ -1,6 +1,7 @@
 package WeatherApp.controller;
 
-import WeatherApp.db.MongoWeatherRepository;
+import WeatherApp.db.MongoWeatherDataContext;
+import WeatherApp.db.WeatherDataContext;
 import WeatherApp.model.Weather;
 
 import java.util.List;
@@ -14,7 +15,7 @@ public class WeatherController {
         return controller;
     }
 
-    private MongoWeatherRepository repository = new MongoWeatherRepository();
+    private WeatherDataContext repository = new MongoWeatherDataContext();
     private WeatherController(){};
 
     public Weather getWeatherFromMinute(int year, int month, int day, int hour, int minute) {
