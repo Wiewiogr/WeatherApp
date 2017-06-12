@@ -113,6 +113,11 @@ public class WeatherMainView {
         }
         DefaultTableModel tableModel = (DefaultTableModel) weatherTable.getModel();
 
+        int rowCount = tableModel.getRowCount();
+        for( int i = rowCount-1; i >= 0; i-- ) {
+            tableModel.removeRow(i);
+        }
+
         Object[] row = new Object[7];
         for(Weather weather: weatherList)
         {
