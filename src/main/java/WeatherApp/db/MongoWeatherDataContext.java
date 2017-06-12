@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by wiewiogr on 08.06.17.
  */
-public class MongoWeatherDataContext implements WeatherDataContext{
+public class MongoWeatherDataContext implements WeatherDataContext {
     private MongoClient mongoClient;
     private MongoDatabase db;
     private String collectionName = "weatherTest";
