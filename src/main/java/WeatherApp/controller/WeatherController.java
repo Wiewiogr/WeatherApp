@@ -10,17 +10,19 @@ import java.util.List;
  * Created by wiewiogr on 08.06.17.
  */
 public class WeatherController {
-    private static WeatherController controller = new WeatherController(
-            WeatherDataContextFactory.getFactory("mongo").createDataContext()
-    );
+    public static WeatherDataContextFactory factory;
+    private static WeatherController controller;
     public static WeatherController getInstance(){
+        if(controller == null){
+            controller = new WeatherController();
+        }
         return controller;
     }
 
-    private WeatherDataContext dataContext;// = new MongoWeatherDataContext();
+    private WeatherDataContext dataContext;
 
-    private WeatherController(WeatherDataContext dataContext){
-        this.dataContext = dataContext;
+    private WeatherController(){
+        this.dataContext = factory.createDataContext();
     };
 
     public Weather getWeatherFromMinute(int year, int month, int day, int hour, int minute) {

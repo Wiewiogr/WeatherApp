@@ -1,6 +1,7 @@
 package WeatherApp.view;
 
 import WeatherApp.controller.WeatherController;
+import WeatherApp.db.WeatherDataContextFactory;
 import WeatherApp.model.Weather;
 
 import javax.swing.*;
@@ -168,6 +169,7 @@ public class WeatherMainView {
     }
 
     public static void main(String[] args) {
+        WeatherController.factory = WeatherDataContextFactory.getFactory("mongo");
         JFrame frame = new JFrame("WeatherMainView");
         WeatherMainView view = new WeatherMainView();
         frame.setContentPane(view.panel1);
