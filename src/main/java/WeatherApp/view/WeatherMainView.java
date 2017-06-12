@@ -170,7 +170,7 @@ public class WeatherMainView {
 
     public static void main(String[] args) {
         WeatherController.factory = WeatherDataContextFactory.getFactory("mongo");
-        JFrame frame = new JFrame("WeatherMainView");
+        JFrame frame = new JFrame("Weather");
         WeatherMainView view = new WeatherMainView();
         frame.setContentPane(view.panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

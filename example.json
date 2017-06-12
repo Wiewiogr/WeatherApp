@@ -1,0 +1,25 @@
+{
+  "_id" : 100,
+  "main" : "Clear",
+  "description" : "clear sky",
+  "icon" : "01d",
+  "temperature" : 24,
+  "humidity" : 38,
+  "pressure" : 1017,
+  "visibility" : 10000,
+  "windSpeed" : 2.6,
+  "clouds" : 0,
+  "windDegree" : 40,
+  "date" : {
+    "year" : 2017,
+    "month" : 6,
+    "day" : 9,
+    "hour" : 16,
+    "minutes" : 30
+  }
+}
+
+
+
+
+
